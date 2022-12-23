@@ -4,10 +4,10 @@ import cors from "cors";
 import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
-// const { OPENAI_API_KEY, PORT } = process.env;
+const { OPENAI_API_KEY, PORT } = process.env;
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
@@ -43,12 +43,10 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 4001, (err) => {
+app.listen(PORT || 4001, (err) => {
   if (err) {
     return console.log("something bad happened", err);
   }
 
-  console.log(
-    `server is up and listening on http://localhost:${process.env.PORT}`
-  );
+  console.log(`server is up and listening on http://localhost:${PORT}`);
 });
