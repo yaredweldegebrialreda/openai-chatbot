@@ -43,7 +43,7 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.listen(PORT, (err) => {
+app.listen(PORT || 4001, (err) => {
   if (err) {
     return console.log("something bad happened", err);
   }
