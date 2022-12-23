@@ -76,7 +76,8 @@ const handleSubmit = async (e) => {
     prompt: data.get(`prompt`),
   });
   console.log(body);
-  const response = await fetch("http://localhost:4001", {
+  // local = "https://open-api-chatbot.onrender.com/";
+  const response = await fetch("https://open-api-chatbot.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
